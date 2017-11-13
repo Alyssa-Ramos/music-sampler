@@ -1,0 +1,51 @@
+// jQuery hide()/show() example with a switch statement
+
+$(document).ready(function() {
+
+
+  // function to hide all divs
+
+  function hideAll() {
+
+  //this should hide each individual album cover (classified)
+    $('#powerAlbum).hide();
+
+
+    $('#singlesAlbum').hide();
+    $('#substanceAlbum').hide();
+    $('#techniqueAlbum').hide();
+  }
+
+  // run that function right away
+  hideAll();
+
+  // when any album cover is clicked, make the suitable div appear
+  $('#audio').click(function() {
+
+    // but first, hide all the divs to ensure that
+    // only one will be open, ever
+    hideAll();
+
+    // here is a switch statement
+
+    // we can get the ID of the thing that was clicked -
+    switch ($(this).attr("id")) {
+      case "theElephant":
+        $('#elephantStuff').show();
+        break;
+
+
+      case "theRhino":
+        $('#rhinoStuff').show();
+        break;
+      case "theZebra":
+        $('#zebraStuff').show();
+        break;
+      case "theLion":
+        $('#lionStuff').show();
+        break;
+    }
+  }); // end of function for clicking
+
+
+});
